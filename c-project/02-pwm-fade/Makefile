@@ -30,7 +30,7 @@ $(TARGET).elf: $(TARGET).o pwm.o hal_avr.o
 
 $(TARGET).hex: $(TARGET).elf
 	$(OBJCOPY) -O ihex -R .eeprom $< $@
-	$(SIZE) --mcu=$(MCU) -C $
+	$(SIZE) --mcu=$(MCU) -C $<
 
 # Host-based tests
 test: test_runner
